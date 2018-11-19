@@ -1,0 +1,44 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteRule ^contactos/$    /conatctos.php [L]
+#RewriteCond %{HTTP_REFERER} !^http://seminarioinformaticount.netau.net
+#RewriteCond %{HTTP_REFERER} !^http://www.seminarioinformaticount.netau.net
+#RewriteRule .*[Jj][Pp][Gg]$|.*[Gg][Ii][Ff]$ http://www.seminarioinformaticount.netau.net/404.php
+#RewriteCond %{HTTP_REFERER} !^http://http://localhost/colsagradocorazon
+#RewriteCond %{HTTP_REFERER} !^http://localhost/colsagradocorazon
+#RewriteRule .*[Jj][Pp][Gg]$|.*[Gg][Ii][Ff]$ http://localhost/colsagradocorazon/404.php
+
+ErrorDocument 400 /400.php
+ErrorDocument 401 /401.php
+ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+ExpiresActive on
+ExpiresDefault A31536000
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.*)$ $1.php
+
+Options -Indexes
+IndexIgnore *.php
+
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
+
+ExpiresActive On
+ExpiresByType image/gif A432000
+ExpiresByType image/jpg A432000
+ExpiresByType image/jpeg A432000
+ExpiresByType image/png A432000
+ExpiresByType image/ico A432000
+ExpiresByType image/bmp A432000
+ExpiresByType text/css A432000
+ExpiresByType text/javascript A432000
+ExpiresByType application/javascript A432000
+ExpiresByType application/x-javascript A432000
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/x-javascript
+
+</IfModule>

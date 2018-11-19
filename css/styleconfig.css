@@ -1,0 +1,18 @@
+.watermark {
+  width: 500px;
+  height: 250px;
+  display: block;
+  position: relative;
+}
+
+.watermark::after {
+  content: "";
+ background:url(http://image.blingee.com/images19/content/output/000/000/000/7dc/818118306_1692672.gif);
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
